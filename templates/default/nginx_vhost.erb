@@ -1,0 +1,28 @@
+upstream pypi {
+  server <%= @pypiserver_interface %>:<%= @pypiserver_port %> fail_timeout=0;
+}
+
+server {
+  listen 80;
+  server_name <%= @server_name %>;
+  rewrite ^ https://$server_name$request_uri? permanent;
+}
+
+server {
+  server_name <%= @server_name %>;
+  listen 443;
+
+  <%= render 'nginx.erb', cookbook: 'ssl_certificate' %>
+
+  location / {
+    auth_basic "Private part";
+    auth_basic_user_file <%= @htpasswd %>;
+    proxy_set_header Host $http_host;
+    proxy_set_header X-Real-IP $remote_addr;
+    proxy_set_header X-Forwarded-Proto https;
+    proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+    add_header Pragma "no-cache";
+    proxy_pass http://pypi;
+  }
+
+}

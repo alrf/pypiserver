@@ -1,0 +1,13 @@
+[Unit]
+Description=Pypiserver
+
+[Service]
+Type=simple
+
+User=<%= @pypiserver_user %>
+Group=<%= @pypiserver_group %>
+
+ExecStart=<%= @pypiserver_path %>/bin/pypi-server -p <%= @pypiserver_port %> -i <%= @pypiserver_interface %> <%= @pypiserver_storage %>
+
+[Install]
+WantedBy=multi-user.target
