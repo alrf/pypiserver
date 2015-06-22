@@ -31,7 +31,8 @@ Attributes
 
 Usage
 ===========
-run_list: ["recipe[mypypi]"] - default recipe install pypiserver + nginx (with SSL and http_basic auth.) as frontend
-run_list: ["recipe[mypypi::pip_conf]"] - recipe configure pip.conf
+
+`run_list: ["recipe[mypypi]"]` - default recipe install pypiserver + nginx (with SSL and http_basic auth.) as frontend
+`run_list: ["recipe[mypypi::pip_conf]"]` - recipe configure pip.conf
 
 kitchen.yml file included.
