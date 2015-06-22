@@ -22,7 +22,8 @@ Attributes
 `virtualenv` - the directory path where a virtualenv for the pypiserver should be created (optional, defaults to /opt/pypi-server/env)  
 `address` - the ip address to bind the pypiserver (defaults to 0.0.0.0)  
 `port` - the port to bind the pypiserver (defaults to 8080)  
-`fallback_url` - the pypi server to query when this doesn't know about a package (defaults to https://pypi.python.org/simple)   `vhost` - Nginx virtualhost name  
+`fallback_url` - the pypi server to query when this doesn't know about a package (defaults to 'https://pypi.python.org/simple')  
+`vhost` - Nginx virtualhost name  
 `name` - Nginx server name  
 `htpasswdfile` - full path to the htpasswdfile (this file will be create automatically with user and password)  
 `htname` - user for htpasswdfile  
