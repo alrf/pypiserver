@@ -6,9 +6,6 @@ default['pypiserver']['group'] = 'root' #FIXME use value_for_platform
 default['pypiserver']['python_version'] = 'python2.7'
 default['pypiserver']['address'] = "0.0.0.0"
 default['pypiserver']['port'] = 8080
-default['pypiserver']['passwd_file'] = nil
-#default['pypiserver']['fallback_url'] = 'https://pypi.python.org/simple'
-
 default['nginxserver']['vhost'] = 'default'
 default['nginxserver']['name'] = 'my.pypi.com'
 default['nginxserver']['fallback_url'] = 'https://' + default['nginxserver']['name'] + '/simple'
