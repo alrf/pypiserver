@@ -34,7 +34,7 @@ Usage
 ===========
 
 `run_list: ["recipe[mypypi]"]` - default recipe install pypiserver + nginx (with SSL and http_basic auth.) as frontend  
-`run_list: ["recipe[mypypi::put_package_into_pypi]"]` - this recipe only for tests - download wheel package, put it into pypiserver and install this package 
+`run_list: ["recipe[mypypi::put_package_into_pypi]"]` - this recipe only for tests - download wheel package, put it into pypiserver and install this package  
 `run_list: ["recipe[mypypi::pip_conf]"]` - recipe configure pip.conf  
 
 kitchen.yml file included.  
