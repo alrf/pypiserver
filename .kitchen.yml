@@ -10,7 +10,9 @@ platforms:
 
 suites:
   - name: default
-#    run_list: ["recipe[mypypi]"]
-    run_list: ["recipe[mypypi::pip_conf]"]
+    run_list:
+      - recipe[mypypi::default]
+      - recipe[mypypi::put_package_into_pypi]
+      - recipe[mypypi::pip_conf]
 
     attributes:
